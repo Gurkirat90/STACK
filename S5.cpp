@@ -1,23 +1,21 @@
 class Solution {
 public:
     string removeStars(string s) 
-    
     {
         stack<string>st;
-        for(int i=0;i<s.lenght();i++)
+        for(int i=0;i<s.length();i++)
         {
-            if(s[i]=="*")
+            if(s[i]=='*')
             st.pop();
             else
             st.push(s[i]);
         }
-        string result=" ";
+        string result="";
         stack<string>sr;
         while(!st.empty())
         {
             sr.push(st.top());
-            st.pop();
-            
+            st.pop();    
         }
         while(!sr.empty())
         {
@@ -25,7 +23,6 @@ public:
             result.push_back(st.top());
             sr.pop();
         }
-        return result;
-        
+        return result;  
     }
 };
